@@ -12,7 +12,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in">
+          <div className="space-y-6 animate-slide-up">
             <p className="text-lg leading-relaxed">
               I'm a passionate developer with a keen eye for design and a love for creating 
               seamless user experiences. With expertise in modern web technologies, I transform 
@@ -23,10 +23,11 @@ const About = () => {
               open-source projects, or sharing knowledge with the developer community.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
-              {["React", "TypeScript", "Node.js", "UI/UX", "Tailwind", "Git"].map((skill) => (
+              {["React", "TypeScript", "Node.js", "UI/UX", "Tailwind", "Git"].map((skill, idx) => (
                 <span 
                   key={skill}
-                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover-lift cursor-default"
+                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover-lift cursor-default animate-scale-in"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
                 >
                   {skill}
                 </span>
