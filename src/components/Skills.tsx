@@ -52,10 +52,11 @@ const Skills = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
+                {category.skills.map((skill, idx) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1.5 rounded-lg bg-secondary text-foreground text-sm border border-border hover:border-primary transition-colors"
+                    className="px-3 py-1.5 rounded-lg bg-secondary text-foreground text-sm border border-border hover:border-primary hover:scale-105 transition-all cursor-default animate-fade-in"
+                    style={{ animationDelay: `${(index * 0.1) + (idx * 0.05)}s` }}
                   >
                     {skill}
                   </span>

@@ -1,5 +1,12 @@
-import { Mail, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, ExternalLink, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { toast } from "sonner";
 
 const socialLinks = [
   {
@@ -28,7 +35,28 @@ const socialLinks = [
   }
 ];
 
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
 const Contact = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
+    toast.success("Message sent successfully! I'll get back to you soon.");
+    form.reset();
+  };
+
   return (
     <section id="contact" className="section-padding">
       <div className="max-w-4xl mx-auto text-center">
@@ -68,15 +96,64 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="animate-fade-in">
-          <Button 
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl"
-            onClick={() => window.open("mailto:your.email@example.com", "_blank")}
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Send me an email
-          </Button>
+        <div className="glass-card rounded-2xl p-8 md:p-10 animate-slide-up">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your name" {...field} className="bg-background" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="your.email@example.com" {...field} className="bg-background" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Tell me about your project..." 
+                        className="min-h-[150px] bg-background resize-none"
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl"
+              >
+                <Send className="mr-2 h-5 w-5" />
+                Send Message
+              </Button>
+            </form>
+          </Form>
         </div>
       </div>
     </section>
