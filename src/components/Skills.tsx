@@ -44,18 +44,18 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.title}
-              className="glass-card rounded-2xl p-6 hover-lift animate-scale-in"
+              className="glass-card rounded-2xl p-6 hover-lift card-shine animate-scale-in group cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-4`}>
-                <category.icon className="w-6 h-6 text-white" />
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg`}>
+                <category.icon className="w-6 h-6 text-white group-hover:animate-pulse" />
               </div>
               <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, idx) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1.5 rounded-lg bg-secondary text-foreground text-sm border border-border hover:border-primary hover:scale-105 transition-all cursor-default animate-fade-in"
+                    className="px-3 py-1.5 rounded-lg bg-secondary text-foreground text-sm border border-border hover:border-primary hover:scale-110 hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer animate-fade-in hover:shadow-md hover:shadow-primary/30"
                     style={{ animationDelay: `${(index * 0.1) + (idx * 0.05)}s` }}
                   >
                     {skill}

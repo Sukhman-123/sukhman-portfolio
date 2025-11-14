@@ -40,14 +40,14 @@ const Experience = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background animate-pulse-slow hover:scale-150 transition-transform duration-300" />
               
-              <div className="glass-card rounded-xl p-6 hover-lift ml-4">
+              <div className="glass-card rounded-xl p-6 hover-lift hover-glow ml-4 card-shine group cursor-pointer">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                  <h3 className="text-xl font-semibold">{exp.role}</h3>
-                  <span className="text-sm text-primary font-medium">{exp.year}</span>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{exp.role}</h3>
+                  <span className="text-sm text-primary font-medium group-hover:scale-110 transition-transform inline-block">{exp.year}</span>
                 </div>
-                <p className="text-muted-foreground font-medium mb-3">{exp.company}</p>
+                <p className="text-muted-foreground font-medium mb-3 group-hover:text-foreground transition-colors">{exp.company}</p>
                 <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
               </div>
             </div>

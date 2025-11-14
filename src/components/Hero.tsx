@@ -23,9 +23,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight hover:scale-105 transition-transform duration-300">
             Hi, I'm{" "}
-            <span className="gradient-text">Your Name</span>
+            <span className="gradient-text text-shimmer">Your Name</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
             Creative Developer & Designer
@@ -38,18 +38,18 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all hover:scale-105 animate-glow"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+              className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all hover:scale-105 hover:shadow-lg"
             >
-              <Download className="mr-2 h-5 w-5" />
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume
             </Button>
           </div>

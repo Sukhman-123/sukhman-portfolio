@@ -26,7 +26,7 @@ const About = () => {
               {["React", "TypeScript", "Node.js", "UI/UX", "Tailwind", "Git"].map((skill, idx) => (
                 <span 
                   key={skill}
-                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover-lift cursor-default animate-scale-in"
+                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover-lift hover-glow cursor-pointer animate-scale-in hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   style={{ animationDelay: `${idx * 0.05}s` }}
                 >
                   {skill}
@@ -36,10 +36,10 @@ const About = () => {
           </div>
 
           <div className="relative animate-scale-in">
-            <div className="glass-card rounded-2xl p-8 hover-lift">
+            <div className="glass-card rounded-2xl p-8 hover-lift card-shine">
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-primary/50">
                     5+
                   </div>
                   <div>
@@ -48,8 +48,8 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-xl">
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-accent/50">
                     50+
                   </div>
                   <div>
@@ -58,8 +58,8 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl">
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-primary/50 animate-pulse-slow">
                     ∞
                   </div>
                   <div>

@@ -87,10 +87,10 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary hover:bg-secondary/70 transition-all hover-lift">
-                  <social.icon className={`w-6 h-6 text-muted-foreground ${social.color} transition-colors`} />
-                  <span className="text-sm font-medium">{social.label}</span>
-                  <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary hover:bg-secondary/70 transition-all hover-lift hover-glow card-shine">
+                  <social.icon className={`w-6 h-6 text-muted-foreground ${social.color} transition-all group-hover:scale-125 group-hover:rotate-12`} />
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">{social.label}</span>
+                  <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1" />
                 </div>
               </a>
             ))}
@@ -148,10 +148,11 @@ const Contact = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl"
+                className="w-full md:w-auto group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/50 transition-all hover:scale-105"
+                disabled={form.formState.isSubmitting}
               >
-                <Send className="mr-2 h-5 w-5" />
-                Send Message
+                <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                {form.formState.isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Form>
