@@ -25,14 +25,14 @@ const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight hover:scale-105 transition-transform duration-300">
             Hi, I'm{" "}
-            <span className="gradient-text text-shimmer">Your Name</span>
+            <span className="gradient-text text-shimmer">Sukhmanpreet Singh</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Creative Developer & Designer
+            Software Developer
           </p>
           <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Crafting beautiful digital experiences with modern technologies. 
-            Passionate about design, code, and everything in between.
+            Creating seamless user experiences with modern technologies.
+            Driven by code and everything in between.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
