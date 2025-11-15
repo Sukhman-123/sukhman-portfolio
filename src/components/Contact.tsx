@@ -108,7 +108,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary hover:bg-secondary/70 transition-all hover-lift hover-glow card-shine">
+                <div className="flex flex-col items-center gap-3 p-4 rounded-xl bg-secondary hover:bg-secondary/70 transition-all hover-lift hover-glow card-shine w-[100px]">
                   <social.icon className={`w-6 h-6 text-muted-foreground ${social.color} transition-all group-hover:scale-125 group-hover:rotate-12`} />
                   <span className="text-sm font-medium group-hover:text-primary transition-colors">{social.label}</span>
                   <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1" />
