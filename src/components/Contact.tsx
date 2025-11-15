@@ -99,7 +99,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
