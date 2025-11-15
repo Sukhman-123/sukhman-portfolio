@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Github, Linkedin, Twitter, ExternalLink, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram, ExternalLink, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,25 +13,25 @@ const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/yourusername",
+    href: "https://github.com/Sukhman-123",
     color: "hover:text-foreground"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/sukhman-hundal-3bb584202/",
     color: "hover:text-[#0077b5]"
   },
   {
-    icon: Twitter,
-    label: "Twitter",
-    href: "https://twitter.com/yourusername",
+    icon: Instagram,
+    label: "Instragram",
+    href: "https://www.instagram.com/sukhman.hundal_/",
     color: "hover:text-[#1DA1F2]"
   },
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:your.email@example.com",
+    href: "mailto:sukhmanpreethundal49@gmail.com",
     color: "hover:text-primary"
   }
 ];
