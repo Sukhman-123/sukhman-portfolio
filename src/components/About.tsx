@@ -19,8 +19,7 @@ const About = () => {
               ideas into elegant, functional solutions.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              When I'm not coding, you'll find me exploring new design trends, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+              When I’m not coding, I’m usually playing sports, listening to music, or engaging in other activities that keep me refreshed and inspired.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               {["React", "TypeScript", "Node.js", "UI/UX", "Tailwind", "Git"].map((skill, idx) => (
@@ -40,7 +39,7 @@ const About = () => {
               <div className="space-y-6">
                 <div className="flex items-start gap-4 group cursor-pointer">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-primary/50">
-                    5+
+                    1.5+
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Years Experience</h3>
@@ -50,7 +49,7 @@ const About = () => {
                 
                 <div className="flex items-start gap-4 group cursor-pointer">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-accent/50">
-                    50+
+                    10+
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Projects Completed</h3>
