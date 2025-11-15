@@ -1,21 +1,32 @@
 const experiences = [
   {
-    year: "2022 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Tech Company Inc.",
-    description: "Leading development of scalable web applications using React, Node.js, and modern cloud technologies. Mentoring junior developers and implementing best practices."
+    year: "April 2025 - Present",
+    role: "Software Developer",
+    company: "OneHash Technologies",
+    description: [
+      "Deployed and maintained ERPNext on AWS and Azure. Configured multitenancy setups with multiple Frappe sites on single servers for cost-efficient operations.",
+      "Integrated ERPNext with platforms like India Mart and Justdial (lead capture), AiSensy (WhatsApp/SMS), Tata Tele Smartflo (call automation), WooCommerce and Amazon (E-commerce).",
+      "Worked across core ERP modules, including CRM, Sales, HR, and Inventory, offering tailored enhancements."
+    ]
   },
   {
-    year: "2020 - 2022",
-    role: "Frontend Developer",
-    company: "Digital Agency Co.",
-    description: "Developed responsive web applications and implemented pixel-perfect designs. Collaborated with designers and backend teams to deliver high-quality products."
+    year: "August 2024 - April 2025",
+    role: "Software Developer Intern",
+    company: "CapitalVia Research Global Limited",
+    description: [
+      "Integrated CRM systems with third-party platforms using REST APIs and automation tools like Make, streamlining lead capture and conversion workflows.",
+      "Built and configured tailored workflows based on specific client requirements, optimizing operational processes and improving user efficiency."
+    ]
   },
   {
-    year: "2018 - 2020",
-    role: "Junior Developer",
-    company: "Startup Solutions",
-    description: "Built user interfaces and integrated APIs for various client projects. Gained experience in agile development and modern frontend frameworks."
+    year: "Sept 2023 - April 2024",
+    role: "Backend Developer Intern",
+    company: "AI Unika Technologies",
+    description: [
+      "Developed and maintained backend features using Node.js, Express.js, and MongoDB.",
+      "Debugged database queries, optimized APIs, and handled server configurations.",
+      "Worked on live company projects such as rastaai.in and rasta360.com."
+    ]
   }
 ];
 
