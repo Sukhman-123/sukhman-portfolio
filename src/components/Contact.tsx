@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Github, Linkedin, Instagram, ExternalLink, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram, ExternalLink, Send, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const socialLinks = [
   {
@@ -24,15 +25,21 @@ const socialLinks = [
   },
   {
     icon: Instagram,
-    label: "Instragram",
+    label: "Instagram",
     href: "https://www.instagram.com/sukhman.hundal_/",
-    color: "hover:text-[#1DA1F2]"
+    color: "hover:text-[#E4405F]"
   },
   {
     icon: Mail,
     label: "Email",
     href: "mailto:sukhmanpreethundal49@gmail.com",
     color: "hover:text-primary"
+  },
+  {
+    icon: Calendar,
+    label: "Cal ID",
+    href: "https://cal.id/sukhmanpreet-singh",
+    color: "hover:text-[#10B981]"
   }
 ];
 
@@ -52,10 +59,24 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    form.reset();
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: values
+      });
+
+      if (error) {
+        console.error('Error sending email:', error);
+        toast.error("Failed to send message. Please try again.");
+        return;
+      }
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      form.reset();
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error("Failed to send message. Please try again.");
+    }
   };
 
   return (
