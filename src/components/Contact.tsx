@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, Instagram, ExternalLink, Send, Calendar } from 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -46,7 +47,9 @@ const socialLinks = [
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  whatsappContact: z.boolean().default(false),
 });
 
 const Contact = () => {
@@ -55,7 +58,9 @@ const Contact = () => {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
+      whatsappContact: false,
     },
   });
 
@@ -151,6 +156,19 @@ const Contact = () => {
               </div>
               <FormField
                 control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="+1 234 567 8900" {...field} className="bg-background" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
                 name="message"
                 render={({ field }) => (
                   <FormItem>
@@ -163,6 +181,28 @@ const Contact = () => {
                       />
                     </FormControl>
                     <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="whatsappContact"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-border p-4 bg-secondary/30">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>
+                        Contact me on WhatsApp
+                      </FormLabel>
+                      <p className="text-sm text-muted-foreground">
+                        I prefer to be contacted through WhatsApp for faster communication
+                      </p>
+                    </div>
                   </FormItem>
                 )}
               />
