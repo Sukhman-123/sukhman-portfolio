@@ -12,7 +12,9 @@ const corsHeaders = {
 interface ContactEmailRequest {
   name: string;
   email: string;
+  phone: string;
   message: string;
+  whatsappContact: boolean;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -22,9 +24,9 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, message }: ContactEmailRequest = await req.json();
+    const { name, email, phone, message, whatsappContact }: ContactEmailRequest = await req.json();
 
-    console.log('Sending contact email from:', name, email);
+    console.log('Sending contact email from:', name, email, 'WhatsApp:', whatsappContact);
 
     // Send email to yourself
     const emailResponse = await resend.emails.send({
@@ -36,6 +38,8 @@ const handler = async (req: Request): Promise<Response> => {
         <h2>New Contact Form Submission</h2>
         <p><strong>From:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>WhatsApp Contact Preferred:</strong> ${whatsappContact ? 'Yes' : 'No'}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
