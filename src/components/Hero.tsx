@@ -48,6 +48,7 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all hover:scale-105 hover:shadow-lg"
+              onClick={() => window.open("https://drive.google.com/file/d/1AVkMygD_mgD069uVQ7TklbdUUlL9s1SD/view?usp=sharing", "_blank")}
             >
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume
