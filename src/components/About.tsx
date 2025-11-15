@@ -22,7 +22,7 @@ const About = () => {
               When I’m not coding, I’m usually playing sports, listening to music, or engaging in other activities that keep me refreshed and inspired.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
-              {["React", "TypeScript", "Node.js", "UI/UX", "Tailwind", "Git"].map((skill, idx) => (
+              {["Python", "Frappe", "Node.js", "MongoDB", "ERPNEXT", "CRM Implementation", "Azure", "AWS", "Git"].map((skill, idx) => (
                 <span 
                   key={skill}
                   className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover-lift hover-glow cursor-pointer animate-scale-in hover:bg-primary hover:text-primary-foreground transition-all duration-300"
