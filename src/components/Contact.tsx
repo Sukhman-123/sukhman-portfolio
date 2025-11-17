@@ -126,7 +126,7 @@ const Contact = () => {
         <div className="glass-card rounded-2xl p-8 md:p-10 animate-slide-up">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -153,10 +153,9 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-              </div>
-              <FormField
-                control={form.control}
-                name="phone"
+                <FormField
+                  control={form.control}
+                  name="phone"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
@@ -167,6 +166,7 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
+              </div>
               <FormField
                 control={form.control}
                 name="message"
@@ -188,7 +188,7 @@ const Contact = () => {
                 control={form.control}
                 name="whatsappContact"
                 render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-border p-4 bg-secondary/30">
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                     <FormControl>
                       <Checkbox
                         checked={field.value}
@@ -196,9 +196,6 @@ const Contact = () => {
                       />
                     </FormControl>
                     <div className="space-y-1 leading-none">
-                      <FormLabel>
-                        Contact me on WhatsApp
-                      </FormLabel>
                       <p className="text-sm text-muted-foreground">
                         I prefer to be contacted through WhatsApp for faster communication
                       </p>
