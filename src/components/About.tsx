@@ -39,7 +39,7 @@ const About = () => {
               <div className="space-y-6">
                 <div className="flex items-start gap-4 group cursor-pointer">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl hover-rotate transition-all group-hover:shadow-lg group-hover:shadow-primary/50">
-                    1.5+
+                    2+
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Years Experience</h3>
